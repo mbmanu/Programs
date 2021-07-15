@@ -1,0 +1,11 @@
+clc; clear all;
+x = input('1st seq');
+h = input('2nd seq');
+m = length(x);
+n = length(h);
+N = m+n-1;
+a = fft(x,N);
+b = fft(h,N);
+c = a.*b;
+y = ifft(c);
+disp(y);
