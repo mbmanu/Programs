@@ -1,0 +1,86 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55e7eac89660 .scope module, "gateTest" "gateTest" 2 12;
+ .timescale -9 -9;
+v0x55e7eaca03f0_0 .var "a", 0 0;
+v0x55e7eaca04b0_0 .var "b", 0 0;
+v0x55e7eaca0550_0 .var/i "i", 31 0;
+v0x55e7eaca05f0_0 .net "o1", 0 0, L_0x55e7eac77ce0;  1 drivers
+v0x55e7eaca0690_0 .net "o2", 0 0, L_0x55e7eac77f20;  1 drivers
+v0x55e7eaca0730_0 .net "o3", 0 0, L_0x55e7eac77f90;  1 drivers
+v0x55e7eaca07d0_0 .net "o4", 0 0, L_0x55e7eaca0d70;  1 drivers
+v0x55e7eaca08a0_0 .net "o5", 0 0, L_0x55e7eaca0f10;  1 drivers
+v0x55e7eaca0970_0 .net "o6", 0 0, L_0x55e7eaca1080;  1 drivers
+v0x55e7eaca0ad0_0 .net "o7", 0 0, L_0x55e7eaca1250;  1 drivers
+S_0x55e7eac897e0 .scope module, "uut" "gate" 2 17, 2 2 0, S_0x55e7eac89660;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 1 "a"
+    .port_info 1 /INPUT 1 "b"
+    .port_info 2 /OUTPUT 1 "o1"
+    .port_info 3 /OUTPUT 1 "o2"
+    .port_info 4 /OUTPUT 1 "o3"
+    .port_info 5 /OUTPUT 1 "o4"
+    .port_info 6 /OUTPUT 1 "o5"
+    .port_info 7 /OUTPUT 1 "o6"
+    .port_info 8 /OUTPUT 1 "o7"
+L_0x55e7eac77ce0 .functor NOT 1, v0x55e7eaca03f0_0, C4<0>, C4<0>, C4<0>;
+L_0x55e7eac77f20 .functor OR 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<0>, C4<0>;
+L_0x55e7eac77f90 .functor AND 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<1>, C4<1>;
+L_0x55e7eaca0d70 .functor XOR 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<0>, C4<0>;
+L_0x55e7eaca0ea0 .functor OR 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<0>, C4<0>;
+L_0x55e7eaca0f10 .functor NOT 1, L_0x55e7eaca0ea0, C4<0>, C4<0>, C4<0>;
+L_0x55e7eaca1010 .functor AND 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<1>, C4<1>;
+L_0x55e7eaca1080 .functor NOT 1, L_0x55e7eaca1010, C4<0>, C4<0>, C4<0>;
+L_0x55e7eaca11e0 .functor XOR 1, v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, C4<0>, C4<0>;
+L_0x55e7eaca1250 .functor NOT 1, L_0x55e7eaca11e0, C4<0>, C4<0>, C4<0>;
+v0x55e7eac78190_0 .net *"_s12", 0 0, L_0x55e7eaca1010;  1 drivers
+v0x55e7eac78230_0 .net *"_s16", 0 0, L_0x55e7eaca11e0;  1 drivers
+v0x55e7eac9fb00_0 .net *"_s8", 0 0, L_0x55e7eaca0ea0;  1 drivers
+v0x55e7eac9fbc0_0 .net "a", 0 0, v0x55e7eaca03f0_0;  1 drivers
+v0x55e7eac9fc80_0 .net "b", 0 0, v0x55e7eaca04b0_0;  1 drivers
+v0x55e7eac9fd90_0 .net "o1", 0 0, L_0x55e7eac77ce0;  alias, 1 drivers
+v0x55e7eac9fe50_0 .net "o2", 0 0, L_0x55e7eac77f20;  alias, 1 drivers
+v0x55e7eac9ff10_0 .net "o3", 0 0, L_0x55e7eac77f90;  alias, 1 drivers
+v0x55e7eac9ffd0_0 .net "o4", 0 0, L_0x55e7eaca0d70;  alias, 1 drivers
+v0x55e7eaca0090_0 .net "o5", 0 0, L_0x55e7eaca0f10;  alias, 1 drivers
+v0x55e7eaca0150_0 .net "o6", 0 0, L_0x55e7eaca1080;  alias, 1 drivers
+v0x55e7eaca0210_0 .net "o7", 0 0, L_0x55e7eaca1250;  alias, 1 drivers
+    .scope S_0x55e7eac89660;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55e7eaca03f0_0, 0;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x55e7eaca04b0_0, 0;
+    %vpi_call 2 23 "$monitor", "a = %b    b = %b    o1 = %b    o2 = %b    o3 = %b    o4 = %b    o5 = %b    o6 = %b    o7 = %b\012", v0x55e7eaca03f0_0, v0x55e7eaca04b0_0, v0x55e7eaca05f0_0, v0x55e7eaca0690_0, v0x55e7eaca0730_0, v0x55e7eaca07d0_0, v0x55e7eaca08a0_0, v0x55e7eaca0970_0, v0x55e7eaca0ad0_0 {0 0 0};
+    %vpi_call 2 24 "$dumpfile", "gates.vcd" {0 0 0};
+    %vpi_call 2 25 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55e7eac89660 {0 0 0};
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v0x55e7eaca0550_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v0x55e7eaca0550_0;
+    %cmpi/s 4, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %load/vec4 v0x55e7eaca0550_0;
+    %pad/s 2;
+    %split/vec4 1;
+    %store/vec4 v0x55e7eaca04b0_0, 0, 1;
+    %store/vec4 v0x55e7eaca03f0_0, 0, 1;
+    %delay 10, 0;
+    %load/vec4 v0x55e7eaca0550_0;
+    %addi 1, 0, 32;
+    %store/vec4 v0x55e7eaca0550_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "gates.v";
