@@ -1,7 +1,8 @@
 `timescale 1ns/1ns
-module ha(input a, b, output sum, carry);
-    assign sum = a ^ b;
-    assign carry = a & b;
+module ha(input a, b, output reg sum, carry);
+    always @(a or b) begin
+        {carry, sum} = a + b;
+    end
 endmodule
 
 module haTest;

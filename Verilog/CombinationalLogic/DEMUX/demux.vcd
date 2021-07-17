@@ -1,0 +1,58 @@
+$date
+	Fri Jul 16 00:14:07 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ns
+$end
+$scope module demuxTest $end
+$var wire 1 ! d $end
+$var wire 1 " c $end
+$var wire 1 # b $end
+$var wire 1 $ a $end
+$var reg 1 % i $end
+$var reg 1 & s0 $end
+$var reg 1 ' s1 $end
+$var integer 32 ( j [31:0] $end
+$scope module uut $end
+$var wire 1 $ a $end
+$var wire 1 # b $end
+$var wire 1 " c $end
+$var wire 1 ! d $end
+$var wire 1 % i $end
+$var wire 1 & s0 $end
+$var wire 1 ' s1 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b0 (
+0'
+0&
+1%
+1$
+0#
+0"
+0!
+$end
+#10
+0$
+1#
+1'
+b1 (
+#20
+1"
+0#
+1&
+0'
+b10 (
+#30
+0"
+1!
+1'
+b11 (
+#40
+b100 (
