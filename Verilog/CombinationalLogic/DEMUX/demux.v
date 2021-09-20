@@ -1,9 +1,11 @@
 `timescale 1ns/1ns
-module demux(input i, s0, s1, output a, b, c, d);
-    assign a = i & ~s1 & ~s0;
-    assign b = i & s1 & ~s0;
-    assign c = i & ~s1 & s0;
-    assign d = i & s1 & s0;
+module demux(input i, s0, s1, output reg a, b, c, d);
+    always @(i or s0 or s1) begin
+        a = i & ~s1 & ~s0;
+        b = i & s1 & ~s0;
+        c = i & ~s1 & s0;
+        d = i & s1 & s0;
+    end
 endmodule
 
 module demuxTest;
